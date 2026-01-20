@@ -11,7 +11,7 @@ connectToDatabase()
 const app=express()
 app.use(cors({
     origin: "https://employee-frontend-pi-two.vercel.app",
-    credentials:true
+    credentials:true,
 }))
 app.use(express.json())
 app.use(express.static('public/uploads'))
