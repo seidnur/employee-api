@@ -10,8 +10,8 @@ import connectToDatabase from './db/db.js'
 connectToDatabase()
 const app=express()
 app.use(cors({
-    origin:"https://employee-frontend-three.vercel.app/login",
-    credentials:true
+    origin: "https://employee-frontend-three.vercel.app/login",
+    credentials:true,
 }))
 app.use(express.json())
 app.use(express.static('public/uploads'))
