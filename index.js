@@ -10,7 +10,7 @@ import connectToDatabase from './db/db.js'
 connectToDatabase()
 const app=express()
 app.use(cors({
-    origin: "https://employee-frontend-three.vercel.app",
+    origin: "https://employee-frontend-pi-two.vercel.app",
     credentials:true,
 }))
 app.use(express.json())
