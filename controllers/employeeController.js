@@ -71,8 +71,7 @@ catch(error){
 }
 }
 const getEmployee =async(req,res)=>{
-    const {id}=req.params;
-   
+    const {id}=req.params;  
    try{
      let employee;
     employee=await Employee.findById({_id:id}).populate('UserId',
@@ -112,7 +111,7 @@ const updateEmployee=await Employee.findByIdAndUpdate({_id:id},{
     salary,
     department
 })
-if(!updateEmployee || updateUser){
+if(!updateEmployee || !updateUser){
     return res.status(404).json({success:false,error:"document not found"})
 }
 return res.status(200).json({success:true,massage:"employee updated"})

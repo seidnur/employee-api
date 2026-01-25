@@ -12,7 +12,7 @@ if(!user){
 const isMatch=await bcrypt.compare(password,user.password)
 if(!isMatch)
 {
-    res.status(404).json({success:false,error:"Wront password"})
+    res.status(404).json({success:false,error:"Wront Password"})
 }
 const token=jwt.sign({_id:user._id,role:user.role},
     process.env.JWT_KEY,{expiresIn:"10d"})

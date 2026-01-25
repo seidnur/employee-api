@@ -24,9 +24,13 @@ catch(error){
 const getLeave=async(req,res)=>{
 try{
 const {id}=req.params;
+let leaves=await Leave.find({employeeId:id})
+if(!leaves){
 const employee=await Employee.findOne({UserId:id})
- 
-const leaves=await Leave.find({employeeId:employee._id})
+ leaves=await Leave.findById({employeeId:employee})
+
+
+}
 
 return res.status(200).json({success:true, leaves})
 
